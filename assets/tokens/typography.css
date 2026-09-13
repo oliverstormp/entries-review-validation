@@ -1,0 +1,60 @@
+/* Lumen Design System — Typography tokens */
+:root {
+  --lumen-fonts-inter-weight-300: 300px;
+  --lumen-fonts-inter-weight-400: 400px;
+  --lumen-fonts-inter-weight-500: 500px;
+  --lumen-fonts-inter-weight-600: 600px;
+  --lumen-fonts-inter-weight-700: 700px;
+  --lumen-fonts-inter-weight-800: 800px;
+  --lumen-fonts-inter-weight-900: 900px;
+  --lumen-font-size-body-sm: var(--lumen-scale-12);
+  --lumen-font-size-display: var(--lumen-scale-40);
+  --lumen-font-size-h1: var(--lumen-scale-32);
+  --lumen-font-size-h2: var(--lumen-scale-24);
+  --lumen-font-size-h3: var(--lumen-scale-20);
+  --lumen-font-size-h4: var(--lumen-scale-18);
+  --lumen-font-size-body-lg: var(--lumen-scale-16);
+  --lumen-font-size-body-md: var(--lumen-scale-14);
+  --lumen-font-line-height-body-sm: var(--lumen-scale-16);
+  --lumen-font-line-height-display: var(--lumen-scale-48);
+  --lumen-font-line-height-h1: var(--lumen-scale-40);
+  --lumen-font-line-height-h2: var(--lumen-scale-32);
+  --lumen-font-line-height-h3: var(--lumen-scale-28);
+  --lumen-font-line-height-h4: var(--lumen-scale-24);
+  --lumen-font-line-height-body-lg: var(--lumen-scale-24);
+  --lumen-font-line-height-body-md: var(--lumen-scale-20);
+  --lumen-font-line-height-body-xs: var(--lumen-scale-12);
+  --lumen-font-weight-light: 300;
+  --lumen-font-weight-regular: 400;
+  --lumen-font-weight-medium: 500;
+  --lumen-font-weight-semibold: 600;
+  --lumen-font-weight-bold: 700;
+  --lumen-font-weight-extrabold: 800;
+  --lumen-font-weight-black: 900;
+  --lumen-display-text-display: var(--lumen-font-weight-bold) var(--lumen-font-size-display)/var(--lumen-font-line-height-display) var(--lumen-font-family-inter);
+  --lumen-heading-text-h1: var(--lumen-font-weight-semibold) var(--lumen-font-size-h1)/var(--lumen-font-line-height-h1) var(--lumen-font-family-inter);
+  --lumen-heading-text-h2: var(--lumen-font-weight-semibold) var(--lumen-font-size-h2)/var(--lumen-font-line-height-h2) var(--lumen-font-family-inter);
+  --lumen-heading-text-h3: var(--lumen-font-weight-semibold) var(--lumen-font-size-h3)/var(--lumen-font-line-height-h3) var(--lumen-font-family-inter);
+  --lumen-heading-text-h4: var(--lumen-font-weight-semibold) var(--lumen-font-size-h4)/var(--lumen-font-line-height-h4) var(--lumen-font-family-inter);
+  --lumen-body-text-body-md-regular: var(--lumen-font-weight-regular) var(--lumen-font-size-body-md)/var(--lumen-font-line-height-body-md) var(--lumen-font-family-inter);
+  --lumen-body-text-body-md-semibold: var(--lumen-font-weight-semibold) var(--lumen-font-size-body-md)/var(--lumen-font-line-height-body-md) var(--lumen-font-family-inter);
+  --lumen-body-text-body-md-medium: var(--lumen-font-weight-medium) var(--lumen-font-size-body-md)/var(--lumen-font-line-height-body-md) var(--lumen-font-family-inter);
+  --lumen-body-text-body-sm-regular: var(--lumen-font-weight-regular) var(--lumen-font-size-body-sm)/var(--lumen-font-line-height-body-sm) var(--lumen-font-family-inter);
+  --lumen-body-text-body-sm-semibold: var(--lumen-font-weight-semibold) var(--lumen-font-size-body-sm)/var(--lumen-font-line-height-body-sm) var(--lumen-font-family-inter);
+  --lumen-body-text-body-sm-medium: var(--lumen-font-weight-medium) var(--lumen-font-size-body-sm)/var(--lumen-font-line-height-body-sm) var(--lumen-font-family-inter);
+  --lumen-body-text-body-lg-medium: var(--lumen-font-weight-medium) var(--lumen-font-size-body-lg)/var(--lumen-font-line-height-body-lg) var(--lumen-font-family-inter);
+  --lumen-body-text-body-lg-regular: var(--lumen-font-weight-regular) var(--lumen-font-size-body-lg)/var(--lumen-font-line-height-body-lg) var(--lumen-font-family-inter);
+  --lumen-body-text-body-lg-semibold: var(--lumen-font-weight-semibold) var(--lumen-font-size-body-lg)/var(--lumen-font-line-height-body-lg) var(--lumen-font-family-inter);
+  --lumen-fonts-inter-style-inter: Inter; /* @kind font */
+  --lumen-fonts-inter-style-fallback: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* @kind font */
+  --lumen-font-family-inter: var(--lumen-fonts-inter-style-fallback); /* @kind font */
+
+  /* Shine Spectra — serif display face for headlines in page headers. Advisor (CGP) product fork addition, see ADVISOR-THEME-NOTES.md. Not part of stock Lumen (Inter-only). */
+  --lumen-fonts-spectra-style-spectra: 'Shine Spectra'; /* @kind font */
+  --lumen-fonts-spectra-style-fallback: 'Shine Spectra', Georgia, 'Times New Roman', serif; /* @kind font */
+  --lumen-font-family-spectra: var(--lumen-fonts-spectra-style-fallback); /* @kind font */
+  --lumen-font-size-headline: 26px;
+  --lumen-font-line-height-headline: var(--lumen-scale-32);
+  --lumen-letter-spacing-headline: -0.6px;
+  --lumen-headline-text-headline: var(--lumen-font-weight-regular) var(--lumen-font-size-headline)/var(--lumen-font-line-height-headline) var(--lumen-font-family-spectra);
+}

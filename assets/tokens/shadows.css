@@ -1,0 +1,13 @@
+/* Lumen Design System — Shadow & blur tokens */
+:root {
+  --lumen-shadow-elevation-input: 0px 4px 16px 0px #00000029;
+  --lumen-shadow-elevation-drawer: -10px 0px 50px 0px #0000002e;
+  --lumen-shadow-shadow-tooltip: 0px 2px 8px 0px var(--lumen-color-effects-shadow-subtle);
+  --lumen-shadow-shadow-toast: 0px 4px 12px 0px var(--lumen-color-effects-shadow-soft);
+  --lumen-shadow-shadow-menu: 0px 6px 16px 0px var(--lumen-color-effects-shadow-medium);
+  --lumen-shadow-shadow-drawer: -8px 2px 20px 0px var(--lumen-color-effects-shadow-medium);
+  --lumen-shadow-shadow-bottom-sheet: 0px -12px 20px 0px var(--lumen-color-effects-shadow-bold);
+  --lumen-shadow-shadow-modal: 0px 0px 32px 0px var(--lumen-color-effects-shadow-medium);
+  --lumen-shadow-shadow-bottom-sheet_1: 0px -10px 25px 0px var(--lumen-color-effects-shadow-medium);
+  --lumen-effects-scrim: blur(12px); /* @kind other */
+}

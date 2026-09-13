@@ -1,0 +1,50 @@
+/* Lumen Design System — Webfonts. Inter is the single brand typeface. */
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../fonts/Inter-Variable.ttf') format('truetype-variations');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../fonts/Inter-Italic-Variable.ttf') format('truetype-variations');
+}
+
+/* Shine Spectra — serif display face, used for headlines in page headers only. Advisor (CGP) product fork addition, see ADVISOR-THEME-NOTES.md. */
+@font-face {
+  font-family: 'Shine Spectra';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/ShineSpectra-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Shine Spectra';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/ShineSpectra-Demibold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Shine Spectra';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/ShineSpectra-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Shine Spectra';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/ShineSpectra-DemiboldItalic.ttf') format('truetype');
+}

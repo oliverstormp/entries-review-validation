@@ -1,0 +1,296 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   lookalike.css — Lumen DS component lookalikes for plain-HTML prototypes
+   ══════════════════════════════════════════════════════════════════════════
+
+   WHAT THIS IS: a hand-authored, static-CSS approximation of the real
+   components in `components/*.jsx` (this folder), for use in plain
+   HTML/CSS/JS stakeholder prototypes (e.g. everything under
+   `Claude Advisor Production Hifi Prototype/`) that deliberately don't load
+   React or the compiled `_ds_bundle.js`, for portability/speed.
+
+   It reproduces the class names, structure, and token references the real
+   components render (`.lmn-btn`, `.lmn-ph`, `.lmn-tag`, etc.) using plain
+   CSS selectors instead of React props/state, so static markup can visually
+   mirror the real design system.
+
+   SOURCE OF TRUTH: the .jsx files under `components/` (core, forms, feedback, navigation) in this folder. This file was
+   verified line-by-line against that source as of 2026-08-24 (token names,
+   interactive states, and structural values were cross-checked against each
+   component's own embedded CSS). A few intentional, documented deviations
+   from the literal component source remain — search this file for "NOTE:"
+   to find them (mostly deliberate density/compactness choices for
+   information-dense prototype screens, or small extensions like
+   `.lmn-table tr.is-issue` / `.lmn-tf.is-success` that the real components
+   don't yet define but that reuse real tokens).
+
+   IMPORTANT — NOT AUTO-GENERATED: there is no build step that keeps this in
+   sync with `components/*.jsx`. Whenever a component's CSS changes (new
+   states, retokened colors, new variants), this file needs a manual
+   re-verification pass against the updated component source. Treat drift
+   between this file and the real components as a bug to fix, not a style
+   choice, unless it's called out below as a deliberate divergence.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Button */
+.lmn-btn{--_bg:var(--lumen-color-surface-neutral-strong-default);--_bgh:var(--lumen-color-surface-neutral-strong-hover);--_bgp:var(--lumen-color-surface-neutral-strong-pressed);--_fg:var(--lumen-color-content-white);--_bd:transparent;
+  display:inline-flex;align-items:center;justify-content:center;min-width:32px;border:1px solid var(--_bd);
+  border-radius:var(--lumen-border-radius-full);cursor:pointer;text-decoration:none;white-space:nowrap;user-select:none;
+  font-family:var(--lumen-font-family-inter);font-weight:var(--lumen-font-weight-semibold);
+  font-size:var(--lumen-font-size-body-md);line-height:var(--lumen-font-line-height-body-md);
+  background-color:var(--_bg);color:var(--_fg);transition:background-color .12s ease,color .12s ease,border-color .12s ease}
+.lmn-btn:hover{background-color:var(--_bgh)}
+.lmn-btn:active{background-color:var(--_bgp)}
+.lmn-btn:disabled{cursor:not-allowed;pointer-events:none;background-color:var(--lumen-color-surface-neutral-disabled);color:var(--lumen-color-content-disabled);border-color:transparent}
+.lmn-btn__icon{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:16px;height:16px}
+.lmn-btn__icon>svg{width:100%;height:100%}
+.lmn-btn__label{flex-shrink:1;overflow:clip;text-overflow:ellipsis}
+.lmn-btn--sm{padding:var(--lumen-padding-4) var(--lumen-padding-8)}
+.lmn-btn--sm .lmn-btn__label{padding:0 var(--lumen-padding-8)}
+.lmn-btn--md{padding:var(--lumen-padding-10) var(--lumen-padding-12)}
+.lmn-btn--md .lmn-btn__label{padding:0 var(--lumen-padding-10)}
+.lmn-btn--icon{min-width:0}
+.lmn-btn--icon.lmn-btn--sm{width:26px;height:26px;padding:var(--lumen-padding-4)}
+.lmn-btn--icon.lmn-btn--md{width:36px;height:36px;padding:var(--lumen-padding-10)}
+.lmn-btn--tonal{--_bg:var(--lumen-color-surface-neutral-soft-default);--_bgh:var(--lumen-color-surface-neutral-soft-hover);--_bgp:var(--lumen-color-surface-neutral-soft-pressed);--_fg:var(--lumen-color-content-black)}
+.lmn-btn--filled.lmn-btn--advisor{--_bg:var(--lumen-color-surface-advisor-strong-default);--_bgh:var(--lumen-color-surface-advisor-strong-hover);--_bgp:var(--lumen-color-surface-advisor-strong-pressed);--_fg:var(--lumen-color-content-white)}
+.lmn-btn--outlined{--_bg:transparent;--_bgh:var(--lumen-color-surface-neutral-subtle-hover);--_bgp:var(--lumen-color-surface-neutral-subtle-pressed);--_fg:var(--lumen-color-content-black);--_bd:var(--lumen-color-border-neutral-soft)}
+.lmn-btn--text{--_bg:transparent;--_bgh:var(--lumen-color-surface-neutral-subtle-hover);--_bgp:var(--lumen-color-surface-neutral-subtle-pressed);--_fg:var(--lumen-color-content-black)}
+.lmn-btn--text.lmn-btn--accent{--_fg:var(--lumen-color-content-accent-medium)}
+/* NOTE: verified against components/core/Button.jsx — this subset (filled/tonal/outlined/text × primary/accent/advisor, sm/md, icon-only) matched the real
+   source exactly (same token names for every state). Real Button also has a `large` size, a `loading` spinner state, and danger/success/warning color
+   variants for tonal/outlined/text — not reproduced here because nothing in the current prototypes uses them; add them from Button.jsx if a screen needs them. */
+
+/* Badge */
+.lmn-badge{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;font-family:var(--lumen-font-family-inter);font-weight:var(--lumen-font-weight-semibold);border-radius:var(--lumen-border-radius-full);background-color:var(--_bg);color:var(--_fg)}
+.lmn-badge--digit{min-width:16px;height:16px;padding:0 var(--lumen-padding-4);font-size:11px;line-height:1}
+.lmn-badge.badge-accent{--_bg:var(--lumen-color-surface-accent-medium-default);--_fg:var(--lumen-color-content-white)}
+.lmn-badge.badge-accent-subtle{--_bg:var(--lumen-color-surface-accent-subtle-default);--_fg:var(--lumen-color-content-accent-bold)}
+.lmn-badge.badge-neutral-subtle{--_bg:var(--lumen-color-surface-neutral-soft-default);--_fg:var(--lumen-color-content-neutral-bold)}
+.lmn-badge.badge-danger{--_bg:var(--lumen-color-surface-danger-bold-default);--_fg:var(--lumen-color-content-white)}
+/* NOTE: fixed against components/core/Badge.jsx — digit badge was 17px, real is 16px; badge-neutral-subtle text was content-neutral-medium, real subtle-neutral pair is content-neutral-bold. */
+
+/* Tag */
+.lmn-tag{display:inline-flex;align-items:center;gap:var(--lumen-spacing-6);border:1px solid transparent;border-radius:var(--lumen-border-radius-8);white-space:nowrap;user-select:none;font-family:var(--lumen-font-family-inter);font-weight:var(--lumen-font-weight-medium);background-color:var(--_bg);color:var(--_fg)}
+.lmn-tag--xs{padding:1px var(--lumen-padding-6);border-radius:var(--lumen-border-radius-6);font-size:11px;line-height:16px}
+.lmn-tag--sm{padding:2px var(--lumen-padding-6);border-radius:var(--lumen-border-radius-6);font-size:11px;line-height:16px}
+.lmn-tag.tag-neutral{--_bg:var(--lumen-color-surface-neutral-subtle-default);--_fg:var(--lumen-color-content-neutral-bold)}
+.lmn-tag.tag-accent{--_bg:var(--lumen-color-surface-accent-subtle-default);--_fg:var(--lumen-color-content-accent-medium)}
+.lmn-tag.tag-danger{--_bg:var(--lumen-color-surface-danger-subtle-default);--_fg:var(--lumen-color-content-danger-bold)}
+.lmn-tag.tag-success{--_bg:var(--lumen-color-surface-success-subtle-default);--_fg:var(--lumen-color-content-success-bold)}
+.lmn-tag.tag-warning{--_bg:var(--lumen-color-surface-warning-subtle-default);--_fg:var(--lumen-color-content-warning-bold)}
+/* NOTE: the real Tag.jsx sets its color pair via inline style (React prop-driven), so these `.tag-*` modifier classes are a necessary static-HTML
+   restructuring — not a deviation in itself. But tag-accent's text color was content-accent-bold; real "subtle" accent pair uses content-accent-medium. Fixed. */
+
+/* Checkbox */
+.lmn-cb{position:relative;display:inline-flex;align-items:center;gap:8px;cursor:pointer;vertical-align:middle}
+.lmn-cb__input{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;border:0}
+.lmn-cb__bg{flex-shrink:0;display:flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:var(--lumen-border-radius-4);box-sizing:border-box;background-color:var(--lumen-color-surface-neutral-base);border:1.5px solid var(--lumen-color-border-neutral-soft);color:var(--lumen-color-content-white);transition:background-color .12s ease,border-color .12s ease}
+.lmn-cb:hover .lmn-cb__input:not(:checked)+.lmn-cb__bg{border-color:var(--lumen-color-border-neutral-medium)}
+.lmn-cb__input:checked+.lmn-cb__bg{background-color:var(--lumen-color-surface-neutral-strong-default);border-color:transparent}
+.lmn-cb:hover .lmn-cb__input:checked+.lmn-cb__bg{background-color:var(--lumen-color-surface-neutral-strong-hover)}
+.lmn-cb__check{display:none;width:12px;height:12px}
+.lmn-cb__input:checked+.lmn-cb__bg .lmn-cb__check{display:block}
+/* NOTE: real Checkbox.jsx is a 24px comfort-box wrapping a 20px inner box; this is a compact 16px single-box variant for dense tables (kept — deliberate
+   density choice). Default border color is border-neutral-soft, with hover states for both the unchecked border and checked bg. Checked fill is
+   near-black (surface-neutral-strong-default/-hover) — changed 2026-08-25 from accent blue to match the advisor product's interactive-color direction
+   (see ADVISOR-THEME-NOTES.md); applied to the real Checkbox.jsx first, this file re-verified against it after. */
+
+/* SegmentedControl */
+.lmn-seg{display:inline-flex;align-items:stretch;gap:var(--lumen-spacing-2);padding:var(--lumen-spacing-4);background-color:var(--lumen-color-surface-neutral-soft-default);border-radius:var(--lumen-border-radius-32)}
+.lmn-seg__item{display:inline-flex;align-items:center;justify-content:center;gap:var(--lumen-spacing-8);border:0;margin:0;background-color:transparent;color:var(--lumen-color-content-neutral-medium);font-family:var(--lumen-font-family-inter);font-weight:var(--lumen-font-weight-semibold);white-space:nowrap;cursor:pointer;border-radius:var(--lumen-border-radius-full);transition:background-color .15s ease,color .15s ease;padding:var(--lumen-spacing-6) var(--lumen-spacing-12);font-size:12px}
+.lmn-seg__item.is-selected{background-color:var(--lumen-color-surface-neutral-base);color:var(--lumen-color-content-black)}
+.lmn-seg__item:not(.is-selected):hover{background-color:var(--lumen-color-surface-neutral-soft-hover);color:var(--lumen-color-content-black)}
+/* NOTE: real hover state also changes text color to content-black, not just background — added. */
+
+/* Tabs */
+.lmn-tabs{display:flex;gap:var(--lumen-spacing-24);border-bottom:1px solid var(--lumen-color-border-neutral-soft);font-family:var(--lumen-font-family-inter)}
+.lmn-tabs__tab{position:relative;display:inline-flex;align-items:center;gap:var(--lumen-spacing-8);border:0;background:transparent;cursor:pointer;padding:7px 0 9px;margin-bottom:-1px;font-family:inherit;font-size:13px;font-weight:500;color:var(--lumen-color-content-neutral-medium);transition:color .12s ease}
+.lmn-tabs__tab:hover{color:var(--lumen-color-content-neutral-strong)}
+.lmn-tabs__tab.is-active{color:var(--lumen-color-content-neutral-strong);font-weight:var(--lumen-font-weight-semibold)}
+.lmn-tabs__tab.is-active::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;border-radius:var(--lumen-border-radius-full);background-color:var(--lumen-color-surface-advisor-bold-default)}
+/* NOTE: several real mismatches fixed — base border was 2px on a *surface* token (should be 1px on the *border* token var(--lumen-color-border-neutral-soft));
+   active weight didn't actually increase to semibold; the hover state (color → content-neutral-strong) was missing entirely. margin-bottom/underline
+   offset adjusted from -2px to -1px to match the corrected 1px border. Active underline color is advisor green (surface-advisor-bold-default) —
+   changed 2026-08-25 from near-black to match the advisor product's direction (see ADVISOR-THEME-NOTES.md); applied to the real Tabs.jsx first, this
+   file re-verified against it after. */
+
+/* Stepper */
+.lmn-step{display:flex;align-items:center;font-family:var(--lumen-font-family-inter);flex:1;justify-content:center}
+.lmn-step__item{display:flex;align-items:center;gap:7px}
+.lmn-step__item--grow{flex:1}
+.lmn-step__dot{display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:var(--lumen-border-radius-8);box-sizing:border-box;flex-shrink:0;font-size:11px;font-weight:500;background-color:var(--lumen-color-surface-neutral-soft-default);color:var(--lumen-color-content-neutral-medium)}
+.lmn-step__item.is-active .lmn-step__dot{background-color:var(--lumen-color-surface-neutral-strong-default);color:var(--lumen-color-content-white)}
+.lmn-step__item.is-done .lmn-step__dot{background-color:var(--lumen-color-surface-success-subtle-default);color:var(--lumen-color-content-success-bold)}
+.lmn-step__item.is-done .lmn-step__line{background-color:var(--lumen-color-surface-success-subtle-default)}
+.lmn-step__label{font-size:12px;color:var(--lumen-color-content-neutral-strong);white-space:nowrap}
+.lmn-step__line{flex:1;height:1px;min-width:18px;background-color:var(--lumen-color-border-neutral-soft);margin:0 5px}
+/* NOTE: base dot background was surface-neutral-subtle-default (real: surface-neutral-soft-default); is-active dot used the *content* token
+   content-neutral-strong as a background and base-white as text (real: surface-neutral-strong-default bg / content-white text — different, correctly-
+   paired tokens even though visually close); is-done line color (success tint on the connector) was missing entirely. All fixed/added; 26px/radius-8
+   dot size kept as a deliberate compact variant of the real 28px/radius-10 dot. */
+
+/* Timeline (used for the Analyzing / Matching checklists) */
+.lmn-tl{display:flex;flex-direction:column;font-family:var(--lumen-font-family-inter);margin-top:6px;border-top:1px solid var(--lumen-color-surface-neutral-soft-default)}
+.lmn-tl__item{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid var(--lumen-color-surface-neutral-soft-default)}
+.lmn-tl__dot{display:flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:var(--lumen-border-radius-8);flex-shrink:0;background-color:var(--lumen-color-surface-neutral-soft-default);color:var(--lumen-color-content-neutral-medium)}
+.lmn-tl__item.is-done .lmn-tl__dot{background-color:var(--lumen-color-surface-success-subtle-default);color:var(--lumen-color-content-success-bold)}
+.lmn-tl__item.is-active .lmn-tl__dot{background-color:var(--lumen-color-surface-neutral-strong-default);color:var(--lumen-color-content-white)}
+.lmn-tl__body{flex:1;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:13px;color:var(--lumen-color-content-neutral-strong)}
+.lmn-tl__item.is-pending .lmn-tl__body{color:var(--lumen-color-content-neutral-subtle)}
+.lmn-tl__status{font-size:11px;font-weight:600;flex-shrink:0}
+.lmn-tl__status.is-done{color:var(--lumen-color-content-success-bold)}
+.lmn-tl__status.is-active{color:var(--lumen-color-content-neutral-strong)}
+@keyframes lmn-spin{to{transform:rotate(360deg)}}
+.lmn-tl__dot .lmn-spin{animation:lmn-spin .9s linear infinite;transform-origin:center}
+/* NOTE: this is a horizontal checklist-row reuse of the Timeline dot, not the real component's vertical rail+connector layout — that restructuring is
+   kept as-is (no rail markup used anywhere in the prototypes). Within it: the dot was a full circle in a raw accent/success color pair (colors-accent-50 /
+   colors-success-50); real Timeline.jsx dots are radius-8 rounded squares on the *semantic* surface-soft/surface-subtle-success tokens, and — importantly —
+   its "active" state is the same dark surface-neutral-strong-default/content-white treatment as Stepper's active state, not an accent-blue tint. Fixed
+   dot shape/tokens to match, and changed .lmn-tl__status.is-active from accent blue to content-neutral-strong so the status label agrees with the now-dark
+   active dot (this status-label pattern itself has no real-component counterpart to verify against). */
+
+/* Progress */
+.lmn-progress__track{width:100%;height:4px;border-radius:var(--lumen-border-radius-full);background-color:var(--lumen-color-surface-neutral-soft-default);overflow:hidden}
+.lmn-progress__fill{height:100%;border-radius:var(--lumen-border-radius-full);background-color:var(--lumen-color-surface-neutral-strong-default);transition:width .3s ease}
+/* NOTE: track height was 5px (real is a hardcoded 4px, not a token). Real Progress.jsx's default `color` prop is now `neutral` (near-black,
+   surface-neutral-strong-default) — changed 2026-08-25 from `accent` to match the advisor product's direction (see ADVISOR-THEME-NOTES.md); the
+   `accent`/`success`/`warning`/`danger` color options still exist on the real component for screens that need them, just no longer the default. */
+
+/* Callout */
+.lmn-callout{box-sizing:border-box;display:flex;align-items:center;gap:var(--lumen-spacing-12);padding:10px 12px;border-radius:var(--lumen-border-radius-12);width:100%;background-color:var(--_bg);color:var(--_fg);font-size:12px}
+.lmn-callout__icon{display:flex;align-items:center;flex-shrink:0;color:var(--_ic)}
+.lmn-callout__text{display:flex;flex:1 0 0;flex-direction:column;gap:2px;min-width:0}
+.lmn-callout__headline{margin:0;font-weight:600;font-size:13px}
+.lmn-callout__msg{margin:0;font-weight:400;line-height:1.5}
+.lmn-callout--informative-low{--_bg:var(--lumen-color-surface-accent-subtle-default);--_fg:var(--lumen-color-content-black);--_ic:var(--lumen-color-content-accent-bold)}
+.lmn-callout--warning-low{--_bg:var(--lumen-color-surface-warning-subtle-default);--_fg:var(--lumen-color-content-black);--_ic:var(--lumen-color-content-warning-bold)}
+/* NOTE: real Callout.jsx's "low emphasis" theme always keeps body text on content-black and only tints the *icon* with the accent/warning color; this
+   file had both text and icon on the tinted color (accent-bold / warning-bold), making the message text itself colored instead of black. Fixed. Also
+   fixed border-radius (was 8, real is 12) and align-items (was flex-start, real default variant is center). */
+
+/* Search */
+.lmn-search{display:flex;flex-direction:column;gap:4px;font-family:var(--lumen-font-family-inter)}
+.lmn-search__field{display:flex;align-items:center;box-sizing:border-box;background-color:var(--lumen-color-surface-neutral-base);border:0.66px solid var(--lumen-color-border-neutral-soft);border-radius:var(--lumen-border-radius-8);transition:border-color .12s ease,box-shadow .12s ease}
+.lmn-search--rounded .lmn-search__field{border-radius:var(--lumen-border-radius-full)}
+.lmn-search__field:hover{border-color:var(--lumen-color-border-neutral-strong)}
+.lmn-search__field:focus-within{border-color:var(--lumen-color-border-accent-medium);box-shadow:inset 0 0 0 1px var(--lumen-color-border-accent-medium)}
+.lmn-search--sm .lmn-search__field{height:36px}
+.lmn-search__icon{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--lumen-color-content-neutral-medium);width:15px;height:15px;margin-left:14px}
+.lmn-search__input{flex:1 0 0;min-width:0;border:0;outline:0;padding:0 10px;background:transparent;font-family:inherit;font-size:13px;color:var(--lumen-color-content-black);height:24px}
+.lmn-search__input::placeholder{color:var(--lumen-color-content-neutral-medium)}
+.lmn-search__filter{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;align-self:stretch;gap:6px;border:0;border-left:1px solid var(--lumen-color-border-neutral-soft);background:transparent;cursor:pointer;color:var(--lumen-color-content-black);font-family:inherit;font-weight:var(--lumen-font-weight-semibold);padding:0 14px;font-size:13px}
+.lmn-search__filter:hover{background-color:var(--lumen-color-surface-neutral-subtle-hover)}
+/* NOTE: `.lmn-search--rounded`/`--sm` are BEM-style modifier names on the root vs. real Search.jsx's state classes (`.is-rounded` on the root); kept as-is
+   since it's self-consistent and only a naming convention, not a token issue. Fixed real mismatches: input/filter text color was content-neutral-strong
+   (real: content-black); filter label weight was medium (real: semibold); the hover border state and the focus-within inset ring were both missing. */
+
+/* TextField */
+.lmn-tf{display:flex;flex-direction:column;gap:6px}
+.lmn-tf__label{font-size:12px;font-weight:600;color:var(--lumen-color-content-black)}
+.lmn-tf__field{display:flex;align-items:center;gap:8px;box-sizing:border-box;height:36px;padding:0 12px;background-color:var(--lumen-color-surface-neutral-base);border:1px solid var(--lumen-color-border-neutral-soft);border-radius:var(--lumen-border-radius-8);transition:border-color .12s ease,background-color .12s ease}
+.lmn-tf__field:hover:not(:focus-within){border-color:var(--lumen-color-border-neutral-strong)}
+.lmn-tf__field:focus-within{border-color:var(--lumen-color-border-accent-medium);box-shadow:inset 0 0 0 1px var(--lumen-color-border-accent-medium)}
+.lmn-tf__input{flex:1 0 0;min-width:0;border:0;outline:0;padding:0;background:transparent;font-family:inherit;font-size:13px;color:var(--lumen-color-content-black)}
+.lmn-tf__input::placeholder{color:var(--lumen-color-content-neutral-medium)}
+.lmn-tf__icon{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--lumen-color-content-black)}
+.lmn-tf__helper{font-size:12px;color:var(--lumen-color-content-neutral-bold)}
+/* NOTE: label/input text color was content-neutral-strong (real: content-black); helper text was content-neutral-medium (real: content-neutral-bold);
+   the hover and focus-within ring states were missing. A `.lmn-tf.is-success` state (green border/bg + checkmark icon) used by the FEC prototype's SIREN
+   field validation UX has no counterpart in the real TextField.jsx (which has no "success" variant, only default/subtle/error/disabled) — that's a
+   screen-specific extension, kept as a page-level override in fec_import_flow_v14.html rather than baked into this shared file. */
+
+/* Select (custom dropdown) */
+.lmn-sel{display:flex;flex-direction:column;gap:4px;font-family:var(--lumen-font-family-inter);position:relative}
+.lmn-sel__label{font-size:12px;font-weight:600;color:var(--lumen-color-content-black);display:flex;align-items:center;gap:6px}
+.lmn-sel__trigger{display:flex;align-items:center;gap:10px;box-sizing:border-box;width:100%;height:36px;padding:0 12px;background-color:var(--lumen-color-surface-neutral-base);border:1px solid var(--lumen-color-border-neutral-soft);border-radius:var(--lumen-border-radius-8);font-family:inherit;font-size:13px;color:var(--lumen-color-content-black);cursor:pointer;text-align:left;transition:border-color .12s ease,box-shadow .12s ease}
+.lmn-sel__trigger:hover{border-color:var(--lumen-color-border-neutral-strong)}
+.lmn-sel.is-open .lmn-sel__trigger{border-color:var(--lumen-color-border-accent-medium);box-shadow:inset 0 0 0 1px var(--lumen-color-border-accent-medium)}
+.lmn-sel__value{flex:1 0 0;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lmn-sel__value.is-placeholder{color:var(--lumen-color-content-neutral-medium)}
+.lmn-sel__chev{flex-shrink:0;color:var(--lumen-color-content-neutral-bold);transition:transform .15s ease}
+.lmn-sel.is-open .lmn-sel__chev{transform:rotate(180deg)}
+.lmn-sel__menu{position:absolute;top:100%;left:0;right:0;margin-top:4px;z-index:20;padding:4px;background-color:var(--lumen-color-surface-neutral-base);border-radius:var(--lumen-border-radius-12);box-shadow:var(--lumen-shadow-shadow-menu);max-height:220px;overflow:auto}
+.lmn-sel__opt{padding:8px 10px;border-radius:var(--lumen-border-radius-8);font-size:13px;color:var(--lumen-color-content-black);cursor:pointer}
+.lmn-sel__opt:hover{background-color:var(--lumen-color-surface-neutral-subtle-default)}
+.lmn-sel__opt.is-active{background-color:var(--lumen-color-surface-accent-subtle-default);color:var(--lumen-color-content-accent-bold);font-weight:500}
+/* NOTE: trigger/option text color was content-neutral-strong (real: content-black); trigger hover border was border-neutral-medium (real: border-
+   neutral-strong); chevron color was content-neutral-medium (real: content-neutral-bold); option radius was 6 (real: 8); the open-state focus ring
+   (box-shadow) was missing; the menu had an extra 1px border not present in the real component (real menu relies on shadow-menu alone for elevation). */
+
+/* Table */
+.lmn-table{display:flex;flex-direction:column;width:100%;font-family:var(--lumen-font-family-inter);background:var(--lumen-color-surface-neutral-base);border:1px solid var(--lumen-color-border-neutral-soft);border-radius:var(--lumen-border-radius-8);overflow:hidden}
+.lmn-table table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:12px}
+.lmn-table th{height:40px;padding:9px 10px;text-align:left;vertical-align:middle;font-weight:600;font-size:11px;color:var(--lumen-color-content-neutral-bold);border-bottom:1px solid var(--lumen-color-border-neutral-soft);white-space:nowrap;background:var(--lumen-color-surface-neutral-base);position:sticky;top:0;z-index:2}
+.lmn-table td{height:40px;padding:0 10px;text-align:left;vertical-align:middle;color:var(--lumen-color-content-neutral-bold);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border-bottom:1px solid var(--lumen-color-surface-neutral-soft-default)}
+.lmn-table tbody tr:last-child td{border-bottom:none}
+.lmn-table tbody tr:hover td{background-color:var(--lumen-color-surface-neutral-subtle-default)}
+.lmn-table tbody tr.is-issue{box-shadow:inset 3px 0 0 var(--lumen-colors-danger-500)}
+.lmn-table tbody tr.is-resolver td{background:var(--lumen-color-surface-neutral-subtle-default);white-space:normal;height:auto;padding:14px 16px}
+.lmn-table td.status-cell{white-space:normal;overflow:visible;height:auto;padding-top:6px;padding-bottom:6px}
+.lmn-table__select-th,.lmn-table__select-td{width:36px}
+.lmn-table__action-td{width:40px;text-align:right}
+/* NOTE: th/td text color was content-neutral-strong (real Table.jsx uses content-neutral-bold for both). Real Table.jsx itself has no border/background/
+   radius at all (per ADVISOR-THEME-NOTES.md, the white "card" look comes from a wrapping <div> each screen supplies) — this file bakes that card chrome
+   directly into `.lmn-table` instead of a separate wrapper div, since no such wrapper convention exists in these static prototypes; kept intentionally.
+   `.is-issue` / `.is-resolver` / `.status-cell` are screen-specific extensions with no real-component counterpart to verify against — kept as reasonable,
+   token-driven additions. The page-specific `.page-tbl .lmn-table th/td` header/row-height overrides used only by fec_import_flow_v14.html live in that
+   file, not here, since they're a page-level skin rather than a shared primitive. */
+
+/* Dialog (contained within the prototype frame, not the real viewport) */
+.lmn-dlg__scrim{position:absolute;inset:0;z-index:6;display:none;align-items:center;justify-content:center;padding:24px;background-color:var(--lumen-color-surface-opacity-black-medium)}
+.lmn-dlg__scrim.visible{display:flex}
+.lmn-dlg{box-sizing:border-box;width:100%;max-width:480px;max-height:calc(100% - 48px);background-color:var(--lumen-color-surface-neutral-base);border-radius:var(--lumen-border-radius-16);box-shadow:var(--lumen-shadow-shadow-modal);font-family:var(--lumen-font-family-inter);overflow:hidden;display:flex;flex-direction:column}
+.lmn-dlg__head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--lumen-color-surface-neutral-soft-default)}
+.lmn-dlg__title{margin:0;font-size:17px;font-weight:600;color:var(--lumen-color-content-neutral-strong);letter-spacing:-0.01em}
+.lmn-dlg__body{padding:20px;overflow-y:auto;display:flex;flex-direction:column;gap:14px}
+.lmn-dlg__actions{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-top:1px solid var(--lumen-color-surface-neutral-soft-default)}
+/* NOTE: `position:absolute` on the scrim (real Dialog.jsx uses `position:fixed`) is intentional — this dialog needs to stay contained within the bounded
+   `.proto-app` prototype frame rather than covering the real browser viewport. Fixed one real token mismatch: the scrim background was surface-opacity-
+   black-strong; real Dialog.jsx uses the lighter surface-opacity-black-medium. Kept the header/footer divider borders and space-between actions layout as
+   deliberate choices for this specific two-CTA ("Save client" / "FEC import") dialog — the real component's simpler chrome (no dividers, actions right-
+   aligned) is a reasonable default for a plainer confirm/cancel dialog but not required here. */
+
+/* FileUpload */
+.lmn-fu__zone{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;box-sizing:border-box;width:100%;padding:26px 20px;text-align:center;cursor:pointer;background-color:var(--lumen-color-surface-neutral-base);border:1.5px dashed var(--lumen-color-border-neutral-medium);border-radius:var(--lumen-border-radius-12);transition:border-color .12s ease,background-color .12s ease}
+.lmn-fu__zone:hover{border-color:var(--lumen-color-border-neutral-strong);background-color:var(--lumen-color-surface-neutral-subtle-default)}
+.lmn-fu__zone.is-drag{border-color:var(--lumen-color-border-accent-medium);border-style:solid;background-color:var(--lumen-color-surface-accent-subtle-default)}
+.lmn-fu__zone.is-uploading{cursor:default;border-style:solid;border-color:var(--lumen-color-border-neutral-soft)}
+.lmn-fu__zone.is-disabled{cursor:not-allowed;background-color:var(--lumen-color-surface-neutral-disabled);border-color:var(--lumen-color-border-disabled)}
+.lmn-fu__zone--compact{flex-direction:row;padding:14px 20px;gap:12px;justify-content:flex-start;text-align:left}
+.lmn-fu__icon{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:var(--lumen-border-radius-full);background-color:var(--lumen-color-surface-neutral-soft-default);color:var(--lumen-color-content-neutral-bold);flex-shrink:0}
+.lmn-fu__zone.is-drag .lmn-fu__icon{background-color:var(--lumen-color-surface-accent-subtle-default);color:var(--lumen-color-content-accent-bold)}
+.lmn-fu__zone--compact .lmn-fu__icon{width:32px;height:32px}
+.lmn-fu__title{font-size:14px;font-weight:600;color:var(--lumen-color-content-neutral-strong)}
+.lmn-fu__sub{font-size:11px;color:var(--lumen-color-content-neutral-medium)}
+/* NOTE: zone radius was 14 (real: 12). The real component's `.is-drag`, `.is-uploading`, and `.is-disabled` states were missing entirely — added from
+   FileUpload.jsx so drag-and-drop and disabled states are available to any prototype that wires up the interaction, even though the current screens
+   only render the idle/compact state today. `--compact` (row layout) has no real-component counterpart — it's a static-prototype-only variant, kept. */
+
+/* PageHeader */
+.lmn-ph{display:flex;flex-direction:column;gap:14px}
+.lmn-ph__bar{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.lmn-ph__back{display:flex;align-items:center;justify-content:center;width:36px;height:36px;flex-shrink:0;border:0;background:transparent;border-radius:var(--lumen-border-radius-full);cursor:pointer;color:var(--lumen-color-content-neutral-strong)}
+.lmn-ph__back:hover{background:var(--lumen-color-surface-neutral-subtle-default)}
+.lmn-ph__titles{display:flex;flex-direction:column;gap:2px;min-width:0}
+.lmn-ph__title{margin:0;font:var(--lumen-headline-text-headline);letter-spacing:var(--lumen-letter-spacing-headline);color:var(--lumen-color-content-neutral-strong)}
+.lmn-ph__subtitle{font-size:12px;color:var(--lumen-color-content-neutral-medium)}
+.lmn-ph__actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.lmn-ph__sub{display:flex;align-items:center;justify-content:space-between;gap:12px}
+/* NOTE: `.lmn-ph__title` color was var(--lumen-colors-advisor-950) — a raw brand-green ramp value. ADVISOR-THEME-NOTES.md documents that the Spectra
+   headline title deliberately kept the existing var(--lumen-color-content-neutral-strong) token rather than a hardcoded/one-off color; this file had
+   drifted from that decision. Fixed. Also fixed `.lmn-ph__bar` alignment (was flex-start, real is center) and added the unused-but-real `.lmn-ph__back`
+   and `.lmn-ph__sub` rules so this frequently-reused nav component stays complete for future screens that need a back button or a sub-row. */
+
+/* Switch */
+.lmn-sw{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;padding:2px;border-radius:var(--lumen-border-radius-4);background:transparent;border:0;cursor:pointer}
+.lmn-sw__track{position:relative;flex-shrink:0;box-sizing:border-box;border-radius:var(--lumen-border-radius-full);padding:2px;width:32px;height:20px;background-color:var(--lumen-color-surface-neutral-bold-default);transition:background-color .15s ease}
+.lmn-sw__thumb{position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background-color:var(--lumen-color-surface-neutral-base);transition:left .15s ease}
+.lmn-sw.is-on .lmn-sw__track{background-color:var(--lumen-color-surface-neutral-strong-default)}
+.lmn-sw.is-on .lmn-sw__thumb{left:14px}
+.lmn-sw__label{font-size:11px;font-weight:600;color:var(--lumen-color-content-neutral-medium);white-space:nowrap;min-width:66px;margin-left:7px}
+/* NOTE: this is the real component's `size="compact"` variant (32×20 track, 16px thumb) — the previous 32×18/14px thumb sizing was a slightly-off
+   approximation, fixed to the real compact spec. The off-track color is surface-neutral-bold-default. On-track color is near-black
+   (surface-neutral-strong-default) — changed 2026-08-25 from accent blue to match the advisor product's direction (see ADVISOR-THEME-NOTES.md); applied
+   to the real Switch.jsx first, this file re-verified against it after. fec_import_flow_v14.html's one demo toggle (`#demoToggle`, "Toggle demo issues")
+   deliberately wants red for "showing errors" rather than this near-black "on" color — that override lives as a page-specific rule keyed to its own id,
+   not baked into this shared file. */

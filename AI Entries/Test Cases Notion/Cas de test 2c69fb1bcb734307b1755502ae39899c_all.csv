@@ -1,0 +1,53 @@
+﻿Cas,Copie d’écran,Date,Document PDF,Résultat attendu,Status,TO DO,USE CASE,détails of the work of IA
+"Line-level expense and fixed asset classification
+
+",Cas%20de%20test/Line-level%20expense%20and%20fixed%20asset%20classification/image.png,"August 15, 2026",Cas%20de%20test/Line-level%20expense%20and%20fixed%20asset%20classification/10_MIX__avec_frais_accesssoire_et_charges.pdf,"Supplier: EQUIP INDUSTRIE OUEST (to be created)
+  • Compresseur industriel 500 L → 21540000 → VAT code: 20% Fixed assets - Goods → 5 760 € TTC → 4 800 € HT → 960 € TVA
+  • Transport et mise en service → 21540000 → VAT code: 20% Fixed assets - Goods → 1 080 € TTC → 900 € HT → 180 € TVA
+  • Kit de 1000 pièces détachées compresseur → 60630000 → VAT code: 20% Goods → 1 440 € TTC → 1 200 € HT → 240 € TVA
+  • Sécheur d'air comprimé associé au compresseur - achat → 60630000 → VAT code: 20% Goods → 216 € TTC → 180 € HT → 36 € TVA
+Total → 8 496 € TTC → 7 080 € HT → 1 416 € TVA","To Validate, New supplier",Show how to create a supplier,"the goal is to show how a new supplier is created. We will see a message indicating that a new account needs to be created. 
+
+I will then explain that the AI analyses the company’s chart of accounts and detects new suppliers. It informs the CPA that a new supplier account needs to be created.
+
+the CPA click on the detail of the entry look at the message, create the new supplier. check the entry and validate the entry.
+
+","The agent analyzes each invoice line and distinguishes between the fixed asset, costs directly attributable to its acquisition, which must be capitalized, and operating expenses, which must be expensed. This demonstrates line-level understanding rather than classifying the entire invoice under a single accounting treatment."
+Mixed customized and general account classification,Cas%20de%20test/Mixed%20customized%20and%20general%20account%20classificatio/image.png,"August 15, 2026",Cas%20de%20test/Mixed%20customized%20and%20general%20account%20classificatio/Facture_Tel_FAC-SFR-0091_(1)_(1).pdf,"Supplier: SFR (activated)
+  • Abonnement mobile Silviu Lupu - 06 44 55 66 01 → 62620100 → code TVA : 20% encaissement → 27,48 € TTC → 22,90 € HT → 4,58 € TVA
+  • Roaming Europe Silviu Lupu → 62620100 → code TVA : 20% encaissement → 4,20 € TTC → 3,50 € HT → 0,70 € TVA
+  • Abonnement mobile Sylvain Bollon - 06 44 55 66 02 → 62620200 → code TVA : 20% encaissement → 29,88 € TTC → 24,90 € HT → 4,98 € TVA
+  • Forfait internet fibre entreprise → 62600000 → code TVA : 20% encaissement → 47,88 € TTC → 39,90 € HT → 7,98 € TVA
+  • Abonnement ligne fixe standard → 62600000 → code TVA : 20% encaissement  → 18,00 € TTC → 15,00 € HT → 3,00 € TVA
+Total → 127,44 € TTC → 106,20 € HT → 21,24 € TVA",To Validate,"prepare in the CoA the account 
+62620100 : Abonnement Silviu L. 06 44 55 66 01
+
+62620200: Abonnement Sylvain B.","In this case, I just want to show that the CPA does not receive any message. They simply review the accounting entry, see that the AI has correctly used the appropriate customized accounts, and validate the entry. ","The agent analyzes each invoice line and distinguishes expenses linked to customized accounts, including their related ancillary costs, from expenses that must be posted to general accounts."
+Customized Chart of Accounts recognition,Cas%20de%20test/Customized%20Chart%20of%20Accounts%20recognition/image.png,"August 15, 2026",Cas%20de%20test/Customized%20Chart%20of%20Accounts%20recognition/12_CASE-12_NoUser_(libelle_utilise).pdf,"supplier : SFR (already activated no message)
+  • Forfait mobile - 06 44 55 66 01 → 62620100 → code TVA : 20% encaissement → 27,48 € TTC → 22,90 € HT → 4,58 € TVA
+  • Roaming hors EU - janvier 2026 → 62620100 → code TVA : 20% encaissement → 10,20 € TTC → 8,50 € HT → 1,70 € TVA",To Validate,"prepare in the CoA the account 
+62620100 : Abonnement Silviu L. 06 44 55 66 01
+
+62620200: Abonnement Sylvain B.","In this case, I just want to show that the CPA does not receive any message. They simply review the accounting entry, see that the AI has correctly used the appropriate customized accounts, and validate the entry. 
+@Marie Leidinger Does hovering over the account display the account name?
+don’t forget to use the to do ","The agent reads the invoice, identifies the phone number, and matches it with the corresponding dedicated telephone account in the customized Chart of Accounts. It also identifies and allocates related ancillary costs to the same account."
+Intra-EU acquisition with reverse charge,Cas%20de%20test/Intra-EU%20acquisition%20with%20reverse%20charge/image.png,"August 23, 2026",Cas%20de%20test/Intra-EU%20acquisition%20with%20reverse%20charge/14_PGEU_03_DE-2026-1187_(1).pdf,"Supplier: DRUCK & TONER GMBH (activated)
+  • Toner compatible HP LaserJet haute capacité → 60640000 → 870,00 € HT → Reverse charge VAT 20%: 174,00 €
+
+  • Papier photo brillant A3 → 60640000 → 496,00 € HT → Reverse charge VAT 20%: 99,20 €
+
+  • Kit de recharge encre grand format → 60640000 → 890,00 € HT → Reverse charge VAT 20%: 178,00 €
+Total → 2 256,00 € HT → Reverse charge VAT 20%: 451,20 €",To Validate,we have to indicate one VAT on the debit and one on the credit.,"In this example, I want to show that the AI has correctly identified the German supplier and properly handled the VAT reverse charge. The calculated VAT is posted both as a debit and a credit.
+
+Once the CPA has checked that everything is correct, they validate the accounting entry.",The agent identifies the purchase of goods from a German supplier and automatically applies the intra-EU VAT reverse charge mechanism.
+VAT on debits identification,Cas%20de%20test/VAT%20on%20debits%20identification/image.png,"August 5, 2026",Cas%20de%20test/VAT%20on%20debits%20identification/19_PGFR_ENERGIE_LUMEA_204587913-0526_(1).pdf,"Supplier: LUMEA ENERGIE (to be created)
+  • Électricité → 60610000 → TVA 20% débit → 347,95 € TTC → 289,96 € HT → 57,99 € TVA
+  • Services, prestations et frais annexes → 60610000 → TVA 20% débit → 11,62 € TTC → 9,68 € HT → 1,94 € TVA
+
+Total → 359,57 € TTC → 299,64 € HT → 59,93 € TVA","To Validate, New supplier",@Marie Leidinger the account 40110122 - fournisseur énergie,"Here, I want to show that the AI has prepared a new supplier account to be created. We will need to display the message indicating that a new account needs to be created.
+However, the CPA already uses account 40110122 - fournisseur énergie, which should be considered as an existing account.
+The CPA therefore decides not to create the new account suggested by the AI. Instead, they change the supplier account and select the existing 40110122 - Energy suppliers account.
+They then review the invoice and the updated accounting entry, and once everything is correct, they validate the entry.",The agent identifies on the invoice that the supplier has opted for VAT on debits and selects the appropriate VAT account accordingly
+Ambiguous accounting treatment - Expense vs Fixed Asset,Cas%20de%20test/Ambiguous%20accounting%20treatment%20-%20Expense%20vs%20Fixed%20/image.png,"August 5, 2026",Cas%20de%20test/Ambiguous%20accounting%20treatment%20-%20Expense%20vs%20Fixed%20/facture_batirenov.pdf,"Supplier: BATIRENOV SARL (already created)
+• Travaux de rénovation et aménagement de l'espace de travail → 21350000 → TVA 20% déductible sur immobilisation → 10 200,00 € TTC → 8 500,00 € HT → 1 700,00 € TVA
+Total → 10 200,00 € TTC → 8 500,00 € HT → 1 700,00 € TVA","To Validate, Clarification needed","@Marie Leidinger you have to create all the design with a “question” on the top. ","Here, I want to show that the AI has identified an ambiguity in the accounting treatment of the invoice. The purchase could be recorded either as an expense or as a fixed asset, and the AI does not have enough information to make the final decision. We will need to display the message asking the CPA to review the proposed treatment and make the accounting decision. The CPA reviews the invoice, decides whether the purchase should be booked as an expense or a fixed asset, and selects the appropriate treatment. The AI updates the accounting entry accordingly. The CPA then reviews the updated entry and, once everything is correct, validates it.",
